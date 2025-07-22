@@ -7,6 +7,9 @@ function Destination({ destination }) {
     day: 'numeric',
   });
 
+  const budgetStatus = destination.budgetedAmount > 2000 ? 'Over Budget' : 'Within Budget';
+  const budgetColor = destination.budgetedAmount > 2000 ? 'red' : 'green';
+
   return (
     <div>
       <h2>{destination.destination}</h2>
@@ -20,6 +23,10 @@ function Destination({ destination }) {
       />
       <p>
         <strong>Date:</strong> {formattedDate}
+      </p>
+      <p>
+        <strong>Budget:</strong> ${destination.budgetedAmount} (
+        <span style={{ color: budgetColor }}>{budgetStatus}</span>)
       </p>
     </div>
   );
