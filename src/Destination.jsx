@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 
 function Destination({ destination }) {
+  if (!destination) {
+    return <div>Please select a destination to view details.</div>;
+  }
+
   const [isFavorite, setIsFavorite] = useState(false);
 
   const formattedDate = new Date(destination.date).toLocaleDateString('en-US', {
