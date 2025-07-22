@@ -64,6 +64,24 @@ function DestinationList() {
         </div>
         )
       })}
+      {destinations.map((destination)=>{
+        (
+          <div key={destination.id}>
+            {editingId===destination.id?(
+              <form onSubmit={handleSubmit}>
+                <input type="text" name="destination" value={formData.destination} onChange={handleChange} />
+                <input type="text" name="description" value={formData.description} onChange={handleChange} />
+                <input type="text" name="date" value={formData.date} onChange={handleChange} />
+                <input type="text" name="budgetAmount" value={formData.budgetAmount} onChange={handleChange} />
+                <input type="text" name="image" value={formData.image} onChange={handleChange} />
+                <button type="submit">Save Edits</button>
+
+              </form>
+            )}
+
+          </div>
+        )
+      })}
     </div>
   )
 }
