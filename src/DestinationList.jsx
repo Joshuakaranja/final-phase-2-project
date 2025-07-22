@@ -35,16 +35,31 @@ function DestinationList() {
       ...formData,[e.target.name]: e.target.value
     });
   }
+  function handleSubmit(e){
+    e.preventDefault();
+    fetch(`https://json-server-books-2.onrender.com/destinations${editingId}`,{
+      method: "PATCH",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify(formData)
+
+    })
+    .then(r=>json())
+    .then(updatedDestination=>{
+      setDestinations(destinations.map((destination)=>destination.id===updatedDestination.id?updatedDestination:destination))
+    })
+  }
   return (
     <div>
       <h2>Destination List</h2>
       {destinations.map((destination)=>{
         return(
         <div key={destination.id}>
-          <h3>{destination.destination}</h3>
-          <p>{destination.description}</p>
-          <p>{destination.date}</p>
-          <p>{destination.budgetAmount}</p>
+          <h3><span className='destination-div'><b>Destination:</b></span>{destination.destination}</h3>
+          <p><span className='destination-div'><b>Description</b></span>{destination.description}</p>
+          <p><span className='destination-div'><b>Date</b></span>{destination.date}</p>
+          <p><span className='destination-div'><b>Budget Amount:</b></span>{destination.budgetAmount}</p>
           <img src={destination.image} alt={destination.destination} style={{width:"300px"}} />
         </div>
         )
