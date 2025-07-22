@@ -1,0 +1,44 @@
+{
+  "destinations": [
+    {
+      "id": 1,
+      "destination": "Santorini, Greece",
+      "description": "Enjoyed whitewashed architecture and stunning sunset views over the Aegean Sea.",
+      "date": "2024-09-15",
+      "budgetedAmount": 1800,
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
+    },
+    {
+      "id": 2,
+      "destination": "Kyoto, Japan",
+      "description": "Visited ancient temples, tea houses, and experienced cherry blossom season.",
+      "date": "2025-04-02",
+      "budgetedAmount": 2100,
+      "image": "https://images.unsplash.com/photo-1549692520-acc6669e2f0c"
+    },
+    {
+      "id": 3,
+      "destination": "Banff, Canada",
+      "description": "Explored the Rocky Mountains and turquoise glacial lakes in Banff National Park.",
+      "date": "2024-07-20",
+      "budgetedAmount": 1600,
+      "image": "https://images.unsplash.com/photo-1508264165352-258db2ebd59b"
+    },
+    {
+      "id": 4,
+      "destination": "Mombasa, Kenya",
+      "description": "Relaxed on Diani Beach and explored the historic Old Town.",
+      "date": "2024-12-10",
+      "budgetedAmount": 900,
+      "image": "https://images.unsplash.com/photo-1599931042410-694a36b2f3cd"
+    },
+    {
+      "id": 5,
+      "destination": "Rome, Italy",
+      "description": "Explored the Colosseum, Vatican, and had amazing Italian food.",
+      "date": "2025-05-18",
+      "budgetedAmount": 1900,
+      "image": "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92"
+    }
+  ]
+}
