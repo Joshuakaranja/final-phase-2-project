@@ -72,10 +72,10 @@ function DestinationList() {
               </form>
             ):(
               <>
-              <h3>{destination.destination}</h3>
-              <p>{destination.description}</p>
-              <p>{destination.date}</p>
-              <p>{destination.budgetAmount}</p>
+              <h3><span className='destination-div'>Destination: </span>{destination.destination}</h3>
+              <p><span className='destination-div'>Description: </span>{destination.description}</p>
+              <p><span className='destination-div'>Date: </span>{destination.date}</p>
+              <p><span className='destination-div'>Budget Amount: </span>{destination.budgetedAmount}</p>
               <img src={destination.image} alt={destination.destination} style={{ width: "300px" }} />
               <button onClick={() => handleEdit(destination)}>Edit</button>
 
