@@ -1,8 +1,21 @@
 import React from 'react'
 import Description from './Description'
+import DestinationList from './DestinationList'
+import Destination from './Destination'
+import Footer from './Footer'
+import Navbar from './Navbar'
+
 function App() {
   return(
-    <Description/>
+  <div>
+    <Description/>,
+    <DestinationList/>,
+    <Destination/>,
+    <Footer/>,
+    <Navbar/>,
+  </div>
+    
+
     
   )
 }
