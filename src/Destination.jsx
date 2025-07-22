@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-function Destination() {
+function Destination({ destination }) {
   return (
-    <div>Destination</div>
-  )
+    <div>
+      <h2>{destination.destination}</h2>
+      <p>{destination.description}</p>
+    </div>
+  );
 }
 
-export default Destination
+export default Destination;
