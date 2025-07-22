@@ -1,16 +1,26 @@
-import React from 'react'
+import React from 'react';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Description from './Description'
+import DestinationList from './DestinationList'
+import Destination from './Destination'
+import Footer from './Footer'
+import Navbar from './Navbar'
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      
-    </>
+  return(
+  <div>
+    <Description/>,
+    <DestinationList/>,
+    <Destination/>,
+    <Footer/>,
+    <Navbar/>,
+  </div>
+  
   )
 }
+  
+ 
 
 export default App;
