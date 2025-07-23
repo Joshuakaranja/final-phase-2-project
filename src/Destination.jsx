@@ -2,7 +2,34 @@ import React, { useState } from 'react';
 
 function Destination({ destination }) {
   const [isFavorite, setIsFavorite] = useState(false);
-  const [formData, setFormData]=useState([]);
+  const [formData, setFormData]=useState({
+    destination:"",
+    description:"",
+    date:"",
+    budgetAmount:"",
+    image:""
+  });
+  function handleFormchange(e){
+    const{name, value}=e.target;
+    setFormData({
+      ...formData,[name]:value,
+    });
+  }
+  function handleSubmit(e){
+    e.preventDefault();
+
+    fetch("https://json-server-books-2.onrender.com/destinations",{
+    method: "POST",
+    headers:{
+      "Content-Type":"application/json"
+    },
+    body:JSON.stringify()
+  })
+  .then(r=>r.json())
+  .then(data=>{
+
+  })
+  }
 
   const toggleFavorite = () => {
     setIsFavorite(!isFavorite);
@@ -24,19 +51,9 @@ function Destination({ destination }) {
     e.preventDefault();
     // handle form submit logic here
   };
-function handlePost(){
-  fetch("https://json-server-books-2.onrender.com/destinations",{
-    method: "POST",
-    headers:{
-      "Content-Type":"application/json"
-    },
-    body:JSON.stringify()
-  })
-  .then(r=>r.json())
-  .then(data=>{
 
-  })
-}
+  
+
   return (
     <div>
       {destination ? (
