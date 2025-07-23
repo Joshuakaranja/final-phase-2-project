@@ -89,6 +89,8 @@ function Destination({ destination }) {
           type="text"
           id="destination"
           name="destination"
+          value={formData.destination}
+          onChange={handleFormchange}
           placeholder="Enter destination"
         />
 
@@ -96,22 +98,26 @@ function Destination({ destination }) {
         <textarea
           id="description"
           name="description"
+          value={formData.description}
+          onChange={handleFormchange}
           placeholder="Enter description"
         />
 
         <label htmlFor="date">Date:</label>
-        <input type="date" id="date" name="date" />
+        <input type="date" id="date" name="date" value={formData.date} onChange={handleFormchange}/>
 
         <label htmlFor="budget">Budget Amount:</label>
         <input
           type="number"
           id="budget"
           name="budget"
+          value={formData.budgetAmount}
+          onChange={handleFormchange}
           placeholder="Enter budget"
         />
 
         <label htmlFor="image">Image URL:</label>
-        <input type="text" id="image" name="image" />
+        <input type="text" id="image" name="image" value={formData.image} onChange={handleFormchange}/>
 
         <button type="submit">Submit</button>
       </form>
