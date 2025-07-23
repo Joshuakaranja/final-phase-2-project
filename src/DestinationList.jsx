@@ -7,7 +7,7 @@ function DestinationList() {
     destination:"",
     description:"",
     date:"",
-    budgetAmount:"",
+    budgetedAmount:"",
     image:""
   });
   useEffect(()=>{
@@ -25,7 +25,7 @@ function DestinationList() {
       destination:destination.destination,
       description:destination.description,
       date:destination.date,
-      budgetAmount:destination.budgetAmount,
+      budgetedAmount:destination.budgetedAmount,
       image:destination.image
     });
   }
@@ -86,22 +86,24 @@ function DestinationList() {
                 <input type="text" name="destination" value={formData.destination} onChange={handleChange} /><br />
                 <input type="text" name="description" value={formData.description} onChange={handleChange} /><br />
                 <input type="text" name="date" value={formData.date} onChange={handleChange} /><br />
-                <input type="text" name="budgetAmount" value={formData.budgetAmount} onChange={handleChange} /><br />
+                <input type="text" name="budgetedAmount" value={formData.budgetedAmount} onChange={handleChange} /><br />
                 <input type="text" name="image" value={formData.image} onChange={handleChange} /><br />
                 <button type="submit">Save Edits</button>
 
               </form>
             ):(
               <>
-              <h3><span className='destination-div'>Destination: </span>{destination.destination}</h3>
-              <p><span className='destination-div'>Description: </span>{destination.description}</p>
-              <p><span className='destination-div'>Date: </span>{destination.date}</p>
-              <p><span className='destination-div'>Budget Amount: </span>{destination.budgetedAmount}</p>
+              <div className='destination-div'>
+              <h3><span style={{color:"yellowgreen"}}>Destination: </span>{destination.destination}</h3>
+              <p><span style={{color:"yellowgreen"}}>Description: </span>{destination.description}</p>
+              <p><span style={{color:"yellowgreen"}}>Date: </span>{destination.date}</p>
+              <p><span style={{color:"yellowgreen"}}>Budget Amount: </span>{destination.budgetedAmount}</p>
               <img src={destination.image} alt={destination.destination} style={{ width: "300px" }} />
               <br />
               <button onClick={() => handleEdit(destination)}>Edit</button>
-              <button onClick={()=>handleDelete(destination.id)}>Delete</button>
-
+              <button onClick={()=>handleDelete(destination.id)}>Delete</button>          
+              </div>
+              
               </>
             
             )}
