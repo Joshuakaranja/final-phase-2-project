@@ -1,4 +1,3 @@
-// components/Footer.js
 import React from "react";
 
 function Footer() {
@@ -7,15 +6,26 @@ function Footer() {
   return (
     <footer style={styles.footer}>
       <div style={styles.container}>
-        <p style={styles.copyright}>
-          © {currentYear} Travel Destinations App. All rights reserved.
-        </p>
-        <p style={styles.credit}>
-          Built with by{" "}
-          <a href="https://github.com/Joshuakaranja" style={styles.link} target="_blank" rel="noopener noreferrer">
-            We travel Group
+        <div style={styles.contactSection}>
+          <p style={styles.copyright}>
+            © {currentYear} Travel Destinations. All rights reserved.
+          </p>
+          <p style={styles.contact}>
+            Contact us: @254-712345667
+          </p>
+        </div>
+        
+        <div style={styles.socialIcons}>
+          <a href="https://instagram.com" style={styles.icon} aria-label="Instagram">
+            📷 Instagram
           </a>
-        </p>
+          <a href="https://facebook.com" style={styles.icon} aria-label="Facebook">
+            📘 Facebook
+          </a>
+          <a href="https://twitter.com" style={styles.icon} aria-label="Twitter">
+            🐦 Twitter
+          </a>
+        </div>
       </div>
     </footer>
   );
@@ -23,31 +33,51 @@ function Footer() {
 
 const styles = {
   footer: {
-    backgroundColor: "#f5f5f5",
-    color: "#555",
-    padding: "1.5rem 0",
-    marginTop: "2rem",
-    borderTop: "1px solid #ddd",
-    textAlign: "center",
-    width: "100%",
+    backgroundColor: "#E4C1F9",
+    color: "black",
+    padding: "1.5rem",
+    borderRadius: "8px",
+    margin: "20px",
+    width: "calc(100% - 40px)",
+    boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
+    fontFamily: "Arial, sans-serif"
   },
   container: {
-    maxWidth: '100%',
-    margin: '0 auto',
-    padding: '0 2rem',
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexWrap: "wrap",
+    gap: "1rem",
+    maxWidth: "1200px",
+    margin: "0 auto"
+  },
+  contactSection: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "0.5rem"
   },
   copyright: {
     fontSize: "0.9rem",
-    color: "#666"
+    margin: 0,
+    fontWeight: "500"
   },
-  credit: {
+  contact: {
     fontSize: "0.9rem",
-    margin: "0",
-    color: "black"
+    margin: 0,
+    fontWeight: "500"
   },
-  link: {
-    color: "#007acc",
-    textDecoration: "none"
+  socialIcons: {
+    display: "flex",
+    gap: "1.5rem",
+    alignItems: "center"
+  },
+  icon: {
+    color: "black",
+    transition: "transform 0.3s ease",
+    ":hover": {
+      transform: "scale(1.1)",
+      color: "#6a3093"
+    }
   }
 };
 
