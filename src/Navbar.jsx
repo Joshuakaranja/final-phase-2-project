@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 function Navbar() {
   useEffect(() => {
     const style = document.createElement('style');
     style.textContent = `
       .nav-link:hover {
-        background-color: beige !important;
-        color: black !important;
+        background-color: rgba(255,255,255,0.2) !important;
+        color: white !important;
+        transform: translateY(-2px);
       }
     `;
     document.head.appendChild(style);
@@ -16,21 +16,39 @@ function Navbar() {
     };
   }, []);
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
   return (
     <nav style={styles.navbar}>
       <div style={styles.container}>
         <div style={styles.logo}>
-          <Link to="/" style={styles.logoLink}>Travel Destinations</Link>
+          <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} style={styles.logoLink}>
+            🌍 Travel Destinations
+          </a>
         </div>
         <ul style={styles.navLinks}>
           <li style={styles.navItem}>
-            <Link to="/" className="nav-link" style={styles.navLink}>Home</Link>
+            <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} className="nav-link" style={styles.navLink}>
+              Home
+            </a>
           </li>
           <li style={styles.navItem}>
-            <Link to="/about" className="nav-link" style={styles.navLink}>About</Link>
+            <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }} className="nav-link" style={styles.navLink}>
+              About
+            </a>
           </li>
           <li style={styles.navItem}>
-            <Link to="/contact" className="nav-link" style={styles.navLink}>Contact</Link>
+            <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }} className="nav-link" style={styles.navLink}>
+              Contact
+            </a>
           </li>
         </ul>
       </div>
