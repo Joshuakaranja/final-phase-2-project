@@ -17,16 +17,18 @@ function Destination({ destination }) {
   }
   function handleSubmit(e){
     e.preventDefault();
+    console.log("Form Submitted");
 
     fetch("https://json-server-books-2.onrender.com/destinations",{
     method: "POST",
     headers:{
       "Content-Type":"application/json"
     },
-    body:JSON.stringify()
+    body:JSON.stringify(formData)
   })
   .then(r=>r.json())
   .then(data=>{
+    console.log(data);
 
   })
   }
@@ -46,11 +48,6 @@ function Destination({ destination }) {
   const budgetStatus =
     destination?.budgetedAmount > 2000 ? 'Over Budget' : 'Within Budget';
   const budgetColor = destination?.budgetedAmount > 2000 ? 'red' : 'green';
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // handle form submit logic here
-  };
 
   
 
@@ -108,9 +105,9 @@ function Destination({ destination }) {
 
         <label htmlFor="budget">Budget Amount:</label>
         <input
-          type="number"
-          id="budget"
-          name="budget"
+          type="text"
+          id="budgetAmount"
+          name="budgetAmount"
           value={formData.budgetAmount}
           onChange={handleFormchange}
           placeholder="Enter budget"
