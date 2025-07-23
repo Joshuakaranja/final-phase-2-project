@@ -60,6 +60,7 @@ function Destination({ destination }) {
   
 
   return (
+
     <div>
       {destination ? (
         <>
