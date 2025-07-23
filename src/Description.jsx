@@ -26,7 +26,7 @@ function Description() {
 
   return (
     <div style={{
-      
+
       padding: '20px',
       textAlign: 'center',
       backgroundColor: '#f9f9f9',
