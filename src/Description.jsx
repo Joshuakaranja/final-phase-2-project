@@ -25,11 +25,23 @@ function Description() {
   }, []);
 
   return (
-    <div className="description">
-      <h1>{greeting}, Welcome to Your Travel Journal</h1>
-      <p>Track your dream destinations, add notes, and plan your adventures!</p>
+    <div style={{
+      
+      padding: '20px',
+      textAlign: 'center',
+      backgroundColor: '#f9f9f9',
+      borderRadius: '8px',
+      margin: '10px'
+    }}>
+      <h1 style={{
+        fontSize: '2em',
+        color: '#333'
+      }}>{greeting}, Welcome to Your Travel Journal</h1>
+      <p style={{
+        fontSize: '1.2em',
+        color: '#666'
+      }}>Track your dream destinations, add notes, and plan your adventures!</p>
     </div>
   );
 }
-
 export default Description;
