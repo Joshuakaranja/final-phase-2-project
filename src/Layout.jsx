@@ -8,7 +8,9 @@ function Layout() {
     <div style={styles.layout}>
       <Navbar />
       <main style={styles.main}>
-        <Outlet />
+        <div className="content-container">
+          <Outlet />
+        </div>
       </main>
       <Footer />
     </div>

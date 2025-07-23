@@ -1,98 +1,93 @@
-import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
-  // Add hover effects
   useEffect(() => {
     const style = document.createElement('style');
     style.textContent = `
-      nav a[style*="color: #ecf0f1"]:hover {
-        background-color: #3498db !important;
-        color: white !important;
-      }
-      nav a[style*="color: #3498db"]:hover {
-        color: #2980b9 !important;
+      .nav-link:hover {
+        background-color: beige !important;
+        color: black !important;
       }
     `;
-    if (!document.head.querySelector('style[data-navbar-styles]')) {
-      style.setAttribute('data-navbar-styles', 'true');
-      document.head.appendChild(style);
-    }
+    document.head.appendChild(style);
+    return () => {
+      document.head.removeChild(style);
+    };
   }, []);
+
   return (
     <nav style={styles.navbar}>
       <div style={styles.container}>
         <div style={styles.logo}>
-          <Link to="/" style={styles.logoLink}>
-            Travel Destinations
-          </Link>
+          <Link to="/" style={styles.logoLink}>Travel Destinations</Link>
         </div>
-        
         <ul style={styles.navLinks}>
           <li style={styles.navItem}>
-            <Link to="/" style={styles.navLink}>
-              Home
-            </Link>
+            <Link to="/" className="nav-link" style={styles.navLink}>Home</Link>
           </li>
           <li style={styles.navItem}>
-            <Link to="/about" style={styles.navLink}>
-              About
-            </Link>
+            <Link to="/about" className="nav-link" style={styles.navLink}>About</Link>
           </li>
           <li style={styles.navItem}>
-            <Link to="/contact" style={styles.navLink}>
-              Contact
-            </Link>
+            <Link to="/contact" className="nav-link" style={styles.navLink}>Contact</Link>
           </li>
         </ul>
       </div>
     </nav>
-  )
+  );
 }
 
 const styles = {
   navbar: {
-    backgroundColor: '#2c3e50',
-    padding: '1rem 0',
+    backgroundColor: '#9D96D4',
+    padding: '1rem ',
     boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-    position: 'sticky',
-    top: 0,
-    
+    width: '94vw', 
+    position: 'fixed', // Makes navbar stick to top
+    top: '8px',
+    left: '20px',
+    zIndex: 1000,
+    borderRadius:'20px'
   },
   container: {
-    maxWidth: '100%',
-    margin: '0 auto',
-    padding: '10px',
+    width: '100%', // Ensures container takes full width
+    margin: 'auto',
+    padding: 'auto',
     display: 'flex',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   logo: {
     fontSize: '1.5rem',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   logoLink: {
-    color: '#3498db',
-    textDecoration: 'none'
+    color: '#40434E',
+    textDecoration: 'none',
+    transition: 'all 0.3s ease',
+    '&:hover': {
+      opacity: 0.8,
+    }
   },
   navLinks: {
     display: 'flex',
     listStyle: 'none',
+    gap: '1.5rem',
     margin: 0,
     padding: 0,
-    gap: '2rem'
   },
   navItem: {
-    margin: 0
+    display: 'inline-block',
   },
   navLink: {
-    color: '#ecf0f1',
     textDecoration: 'none',
-    fontSize: '1rem',
-    padding: '0.5rem 1rem',
-    borderRadius: '4px',
-    transition: 'background-color 0.3s ease'
-  }
+    color: '#ecf0f1',
+    padding: '0.6rem 1.2rem',
+    borderRadius: '5px',
+    transition: 'all 0.3s ease',
+    display: 'inline-block',
+  },
 };
 
-export default Navbar
+export default Navbar;
