@@ -54,15 +54,24 @@ function DestinationList() {
   
   }
   
-  function handleDelete(){
+  function handleDelete(id){
     fetch(`https://json-server-books-2.onrender.com/destinations/${id}`,{
       method: "DELETE",
       headers:{
         "Content-Type":"application/json"
       }
     })
-    .then(r=>r.json())
-    .then()
+    .then(r=>{
+      if (r.ok){
+        setDestinations(prev=>prev.filter((destination)=>{
+         return destination.id!==id
+        }));
+      
+      }else{
+        console.error("Failed to delete");
+      }
+    })
+    
 
   }
   return (
@@ -91,7 +100,7 @@ function DestinationList() {
               <img src={destination.image} alt={destination.destination} style={{ width: "300px" }} />
               <br />
               <button onClick={() => handleEdit(destination)}>Edit</button>
-              <button>Delete</button>
+              <button onClick={()=>handleDelete(destination.id)}>Delete</button>
 
               </>
             
