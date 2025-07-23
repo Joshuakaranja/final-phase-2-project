@@ -57,12 +57,12 @@ const styles = {
     boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
     position: 'sticky',
     top: 0,
-    zIndex: 1000
+    
   },
   container: {
     maxWidth: '100%',
     margin: '0 auto',
-    padding: '0 3rem',
+    padding: '10px',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center'

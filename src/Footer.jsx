@@ -26,24 +26,24 @@ const styles = {
     backgroundColor: "#f5f5f5",
     color: "#555",
     padding: "1.5rem 0",
-    marginTop: "2rem",
+    marginTop: "5rem",
     borderTop: "1px solid ",
-    textAlign: "center"
+    textAlign: "center",
   },
   container: {
     maxWidth: '100%',
     margin: '0 auto',
-    padding: '0 3rem'
+    padding: '0 3rem',
+    borderRadius:"",
   },
   copyright: {
     fontSize: "0.9rem",
-    margin: "0 0 0.5rem 0",
     color: "#666"
   },
   credit: {
     fontSize: "0.9rem",
     margin: "0",
-    color: "#555"
+    color: "black"
   },
   link: {
     color: "#007acc",
