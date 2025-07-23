@@ -75,8 +75,7 @@ function DestinationList() {
 
   }
   return (
-
-    <div>
+<div>
       <h2>Destination List</h2>
       
       {destinations.map((destination)=>{
@@ -114,7 +113,6 @@ function DestinationList() {
       })}
     </div>
 
-    <div></div>
 
   )
 }
