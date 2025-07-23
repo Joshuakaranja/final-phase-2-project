@@ -1,4 +1,7 @@
 import React from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
 import Description from './Description'
 import DestinationList from './DestinationList'
 import Destination from './Destination'
@@ -7,6 +10,16 @@ import Navbar from './Navbar'
 
 function App() {
   return(
+
+  <div>
+    <Description/>,
+    <DestinationList/>,
+    <Destination/>,
+    <Footer/>,
+    <Navbar/>,
+  </div>
+  
+
     <div>
       <Navbar/>
       <Description/>
@@ -14,9 +27,10 @@ function App() {
       <Destination/>
       <Footer/>
     </div>
+
   )
 }
   
  
 
-export default App
+export default App;
