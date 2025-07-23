@@ -29,6 +29,13 @@ function Destination({ destination }) {
   .then(r=>r.json())
   .then(data=>{
     console.log(data);
+    setFormData({
+      destination: "",
+      description: "",
+      date: "",
+      budgetAmount: "",
+      image: ""
+    });
 
   })
   }
@@ -49,6 +56,7 @@ function Destination({ destination }) {
     destination?.budgetedAmount > 2000 ? 'Over Budget' : 'Within Budget';
   const budgetColor = destination?.budgetedAmount > 2000 ? 'red' : 'green';
 
+  
   
 
   return (
@@ -79,7 +87,6 @@ function Destination({ destination }) {
         <div>Enter a destination to view details.</div>
       )}
 
-      {/* Show the form regardless */}
       <form onSubmit={handleSubmit}>
         <label htmlFor="destination">Destination:</label>
         <input
@@ -115,8 +122,8 @@ function Destination({ destination }) {
 
         <label htmlFor="image">Image URL:</label>
         <input type="text" id="image" name="image" value={formData.image} onChange={handleFormchange}/>
-
         <button type="submit">Submit</button>
+        
       </form>
     </div>
   );
