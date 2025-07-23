@@ -75,6 +75,7 @@ function DestinationList() {
 
   }
   return (
+
     <div>
       <h2>Destination List</h2>
       
@@ -112,6 +113,9 @@ function DestinationList() {
         )
       })}
     </div>
+
+    <div></div>
+
   )
 }
 
