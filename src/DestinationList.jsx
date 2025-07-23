@@ -53,6 +53,18 @@ function DestinationList() {
     });
   
   }
+  
+  function handleDelete(){
+    fetch(`https://json-server-books-2.onrender.com/destinations/${id}`,{
+      method: "DELETE",
+      headers:{
+        "Content-Type":"application/json"
+      }
+    })
+    .then(r=>r.json())
+    .then()
+
+  }
   return (
     <div>
       <h2>Destination List</h2>
@@ -62,11 +74,11 @@ function DestinationList() {
           <div key={destination.id}>
             {editingId===destination.id?(
               <form onSubmit={handleSubmit}>
-                <input type="text" name="destination" value={formData.destination} onChange={handleChange} />
-                <input type="text" name="description" value={formData.description} onChange={handleChange} />
-                <input type="text" name="date" value={formData.date} onChange={handleChange} />
-                <input type="text" name="budgetAmount" value={formData.budgetAmount} onChange={handleChange} />
-                <input type="text" name="image" value={formData.image} onChange={handleChange} />
+                <input type="text" name="destination" value={formData.destination} onChange={handleChange} /><br />
+                <input type="text" name="description" value={formData.description} onChange={handleChange} /><br />
+                <input type="text" name="date" value={formData.date} onChange={handleChange} /><br />
+                <input type="text" name="budgetAmount" value={formData.budgetAmount} onChange={handleChange} /><br />
+                <input type="text" name="image" value={formData.image} onChange={handleChange} /><br />
                 <button type="submit">Save Edits</button>
 
               </form>
@@ -77,7 +89,9 @@ function DestinationList() {
               <p><span className='destination-div'>Date: </span>{destination.date}</p>
               <p><span className='destination-div'>Budget Amount: </span>{destination.budgetedAmount}</p>
               <img src={destination.image} alt={destination.destination} style={{ width: "300px" }} />
+              <br />
               <button onClick={() => handleEdit(destination)}>Edit</button>
+              <button>Delete</button>
 
               </>
             
