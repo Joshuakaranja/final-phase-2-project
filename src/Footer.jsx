@@ -38,7 +38,7 @@ const styles = {
     padding: "1.5rem",
     borderRadius: "8px",
     margin: "20px",
-    width: "calc(100% - 40px)",
+    width: "95vw",
     boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
     fontFamily: "Arial, sans-serif"
   },
