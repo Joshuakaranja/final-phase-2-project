@@ -56,9 +56,6 @@ function Destination({ destination }) {
     destination?.budgetedAmount > 2000 ? 'Over Budget' : 'Within Budget';
   const budgetColor = destination?.budgetedAmount > 2000 ? 'red' : 'green';
 
-  
-  
-
   return (
     <div>
       {destination ? (
@@ -86,6 +83,9 @@ function Destination({ destination }) {
       ) : (
         <div>Enter a destination to view details.</div>
       )}
+            <button onClick={toggleFavorite} style={{ margin: '10px 0' }}>
+        {isFavorite ? 'Remove from Favorites' : 'Add to Favorites'}
+      </button>
 
       <form onSubmit={handleSubmit}>
         <label htmlFor="destination">Destination:</label>
