@@ -1,18 +1,12 @@
-/* Simple Theme Colors */
-
-/* Light Mode (Default) */
 body {
   background-color: white;
   color: black;
 }
 
-/* Dark Mode */
 body.dark-theme {
   background-color: #1a1a1a;
   color: white;
 }
-
-/* Navigation Bar */
 .navbar {
   background-color: #9D96D4;
 }
@@ -21,7 +15,6 @@ body.dark-theme {
   background-color: #2d3748;
 }
 
-/* Cards */
 .card {
   background-color: white;
   border: 1px solid #e0e0e0;
@@ -34,7 +27,6 @@ body.dark-theme {
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
-/* Text Colors */
 .text-primary {
   color: #333;
 }
@@ -51,7 +43,6 @@ body.dark-theme {
   color: #a0a0a0;
 }
 
-/* Input Fields */
 input, textarea {
   background-color: white;
   color: black;
@@ -65,24 +56,20 @@ input, textarea {
   border: 2px solid #4a5568;
 }
 
-/* Button styling */
 button:hover {
   opacity: 0.9;
   transform: translateY(-1px);
 }
 
-/* Smooth transitions for theme changes */
 * {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Global theme application */
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
 }
 
-/* Theme toggle button hover effects */
 [data-theme="light"] .theme-toggle:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 20px var(--toggle-shadow);
@@ -93,7 +80,6 @@ body {
   box-shadow: 0 6px 20px var(--toggle-shadow);
 }
 
-/* Scrollbar theming */
 ::-webkit-scrollbar {
   width: 8px;
 }
