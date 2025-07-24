@@ -20,16 +20,10 @@ function App() {
   </div>
   
 
-    <div>
-      <Navbar/>
-      <Description/>
-      <DestinationList/>
-      <Destination/>
-      <Footer/>
-    </div>
+   
 
   )
-}
+};
   
  
 
