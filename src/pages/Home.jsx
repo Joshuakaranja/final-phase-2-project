@@ -1,11 +1,10 @@
 import React from 'react'
-import DestinationList from '../DestinationList'
-import Description from '../Description'
+import DestinationList from '../components/DestinationList'
 function Home() {
   return (
     <div>
       <DestinationList />
-      <Description/>
+      
     </div>
   )
 }

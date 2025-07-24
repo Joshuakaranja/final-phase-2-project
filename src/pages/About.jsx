@@ -1,5 +1,5 @@
 import React from 'react'
-import Description from '../Description'
+import Description from '../components/Description'
 
 function About() {
   return (

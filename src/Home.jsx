@@ -1,6 +1,6 @@
 import React from 'react'
-import Description from './Description'
-import DestinationList from './DestinationList'
+import Description from './components/Description'
+import DestinationList from './components/DestinationList'
 
 
 function Home() {
