@@ -1,0 +1,98 @@
+body {
+  background-color: white;
+  color: black;
+}
+
+body.dark-theme {
+  background-color: #1a1a1a;
+  color: white;
+}
+.navbar {
+  background-color: #9D96D4;
+}
+
+.dark-theme .navbar {
+  background-color: #2d3748;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.dark-theme .card {
+  background-color: #2d3748;
+  border: 1px solid #4a5568;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.text-primary {
+  color: #333;
+}
+
+.dark-theme .text-primary {
+  color: #ffffff;
+}
+
+.text-secondary {
+  color: #666;
+}
+
+.dark-theme .text-secondary {
+  color: #a0a0a0;
+}
+
+input, textarea {
+  background-color: white;
+  color: black;
+  border: 2px solid #e0e0e0;
+}
+
+.dark-theme input,
+.dark-theme textarea {
+  background-color: #1a1a1a;
+  color: white;
+  border: 2px solid #4a5568;
+}
+
+button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+[data-theme="light"] .theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px var(--toggle-shadow);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px var(--toggle-shadow);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}

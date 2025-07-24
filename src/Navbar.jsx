@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import ThemeToggle from './components/ThemeToggle';
 
 function Navbar() {
   useEffect(() => {
     const style = document.createElement('style');
     style.textContent = `
       .nav-link:hover {
-        background-color: beige !important;
-        color: black !important;
+        background-color: rgba(255,255,255,0.2) !important;
+        color: white !important;
+        transform: translateY(-2px);
       }
     `;
     document.head.appendChild(style);
@@ -16,23 +17,46 @@ function Navbar() {
     };
   }, []);
 
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
   return (
-    <nav style={styles.navbar}>
+    <nav className="navbar" style={styles.navbar}>
       <div style={styles.container}>
         <div style={styles.logo}>
-          <Link to="/" style={styles.logoLink}>Travel Destinations</Link>
+          <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} style={styles.logoLink}>
+            🌍 Travel Destinations
+          </a>
         </div>
-        <ul style={styles.navLinks}>
-          <li style={styles.navItem}>
-            <Link to="/" className="nav-link" style={styles.navLink}>Home</Link>
-          </li>
-          <li style={styles.navItem}>
-            <Link to="/about" className="nav-link" style={styles.navLink}>About</Link>
-          </li>
-          <li style={styles.navItem}>
-            <Link to="/contact" className="nav-link" style={styles.navLink}>Contact</Link>
-          </li>
-        </ul>
+        <div style={styles.navRight}>
+          <ul style={styles.navLinks}>
+            <li style={styles.navItem}>
+              <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} className="nav-link" style={styles.navLink}>
+                Home
+              </a>
+            </li>
+            <li style={styles.navItem}>
+              <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }} className="nav-link" style={styles.navLink}>
+                About
+              </a>
+            </li>
+            <li style={styles.navItem}>
+              <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }} className="nav-link" style={styles.navLink}>
+                Contact
+              </a>
+            </li>
+          </ul>
+          <div className="theme-toggle">
+            <ThemeToggle />
+          </div>
+        </div>
       </div>
     </nav>
   );
@@ -40,18 +64,17 @@ function Navbar() {
 
 const styles = {
   navbar: {
-    backgroundColor: '#9D96D4',
-    padding: '1rem ',
+    padding: '1rem',
     boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
     width: '94vw', 
-    position: 'fixed', // Makes navbar stick to top
+    position: 'fixed',
     top: '8px',
     left: '20px',
     zIndex: 1000,
-    borderRadius:'20px'
+    borderRadius: '20px'
   },
   container: {
-    width: '100%', // Ensures container takes full width
+    width: '100%',
     margin: 'auto',
     padding: 'auto',
     display: 'flex',
@@ -66,9 +89,11 @@ const styles = {
     color: '#40434E',
     textDecoration: 'none',
     transition: 'all 0.3s ease',
-    '&:hover': {
-      opacity: 0.8,
-    }
+  },
+  navRight: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '2rem',
   },
   navLinks: {
     display: 'flex',

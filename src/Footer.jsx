@@ -1,84 +1,85 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Footer() {
-  const currentYear = new Date().getFullYear();
-  
+  const [feedback, setFeedback] = useState("");
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Feedback submitted:", feedback, email);
+    // Handle the submission (e.g., send to an API)
+    setFeedback("");
+    setEmail("");
+  };
+
   return (
-    <footer style={styles.footer}>
-      <div style={styles.container}>
-        <div style={styles.contactSection}>
-          <p style={styles.copyright}>
-            © {currentYear} Travel Destinations. All rights reserved.
-          </p>
-          <p style={styles.contact}>
-            Contact us: @254-712345667
-          </p>
-        </div>
-        
-        <div style={styles.socialIcons}>
-          <a href="https://instagram.com" style={styles.icon} aria-label="Instagram">
-            📷 Instagram
-          </a>
-          <a href="https://facebook.com" style={styles.icon} aria-label="Facebook">
-            📘 Facebook
-          </a>
-          <a href="https://twitter.com" style={styles.icon} aria-label="Twitter">
-            🐦 Twitter
-          </a>
-        </div>
-      </div>
+    <footer className="card" style={styles.container}>
+      <h3 style={styles.footerTitle}>We'd Love Your Feedback!</h3>
+      <form onSubmit={handleSubmit} style={styles.form}>
+        <textarea
+          placeholder="Your feedback"
+          value={feedback}
+          onChange={(e) => setFeedback(e.target.value)}
+          style={styles.textarea}
+          required
+        />
+        <input
+          type="email"
+          placeholder="Your contact email (optional)"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          style={styles.input}
+        />
+        <button type="submit" style={styles.button}>Send Feedback</button>
+      </form>
+      <p style={styles.contactInfo}>Or contact us directly at: <a href="mailto:wetravel2@gmail.com">wetravel2@gmail.com</a></p>
     </footer>
   );
 }
 
 const styles = {
-  footer: {
-    backgroundColor: "#E4C1F9",
-    color: "black",
-    padding: "1.5rem",
-    borderRadius: "8px",
-    margin: "20px",
-    width: "95vw",
-    boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
-    fontFamily: "Arial, sans-serif"
-  },
   container: {
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-    flexWrap: "wrap",
-    gap: "1rem",
-    maxWidth: "1200px",
-    margin: "0 auto"
+    padding: "1.5rem",
+    textAlign: "center",
   },
-  contactSection: {
+  footerTitle: {
+    fontSize: "1.5rem",
+    margin: "0 0 1rem",
+    fontWeight: "bold",
+  },
+  form: {
     display: "flex",
     flexDirection: "column",
-    gap: "0.5rem"
+    gap: "1rem",
+    alignItems: "center",
+    maxWidth: "500px",
+    margin: "0 auto",
   },
-  copyright: {
-    fontSize: "0.9rem",
-    margin: 0,
-    fontWeight: "500"
+  textarea: {
+    width: "100%",
+    padding: "0.5rem",
+    minHeight: "100px",
+    borderRadius: "5px",
+    borderColor: "#aaa",
+    resize: "vertical",
   },
-  contact: {
-    fontSize: "0.9rem",
-    margin: 0,
-    fontWeight: "500"
+  input: {
+    width: "100%",
+    padding: "0.5rem",
+    borderRadius: "5px",
+    borderColor: "#aaa",
   },
-  socialIcons: {
-    display: "flex",
-    gap: "1.5rem",
-    alignItems: "center"
+  button: {
+    padding: "0.5rem 1rem",
+    borderRadius: "5px",
+    backgroundColor: "#646cff",
+    color: "white",
+    border: "none",
+    cursor: "pointer",
   },
-  icon: {
-    color: "black",
-    transition: "transform 0.3s ease",
-    ":hover": {
-      transform: "scale(1.1)",
-      color: "#6a3093"
-    }
-  }
+  contactInfo: {
+    marginTop: "1rem",
+  },
 };
 
 export default Footer;
