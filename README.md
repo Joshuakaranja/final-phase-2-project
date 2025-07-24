@@ -1,16 +1,48 @@
-# React + Vite
+# Travel Destinations App
+#### A modern, responsive React application for managing and organizing your travel destinations, January 2025
+#### By **GROUP 10 MEMBERS**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+This Travel Destinations App is a comprehensive web application built with React that allows users to manage their travel bucket list and track their adventures. The application provides a clean, intuitive interface where users can view, edit, and delete travel destinations with detailed information including images, descriptions, planned dates, and budgeted amounts.
 
-Currently, two official plugins are available:
+The app features a modern card-based layout that displays destinations in a responsive grid, making it easy to browse through saved locations. Users can edit destination details inline without navigating to separate pages, providing a seamless user experience. The application also includes a dark/light theme toggle that respects system preferences and persists user choices.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Key functionality includes smooth navigation between sections (Home, About, Contact), real-time data management through a JSON server API, and responsive design that works across all device sizes. The interface is designed with accessibility in mind and provides visual feedback for all user interactions.
 
-## Expanding the ESLint configuration
+## Setup/Installation Requirements
+* Clone this repository to your local machine
+* Navigate to the project directory in your terminal
+* Run `npm install` to install all dependencies
+* Ensure you have Node.js version 16 or higher installed
+* Run `npm run dev` to start the development server
+* Open your browser and navigate to `http://localhost:5173`
+* The application connects to a JSON server hosted at `https://json-server-books-2.onrender.com`
+* No additional database setup is required as the app uses the hosted JSON server
+* For development, ensure you have a stable internet connection to access the API
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# final-phase-2-project
+## Known Bugs
+Currently, there are no known critical bugs in the application. However, some areas for improvement include:
+* The app does not include functionality to add new destinations (only edit/delete existing ones)
+* Image URLs must be provided manually rather than through file upload
+* The application depends on an external JSON server, so functionality may be limited if the server is unavailable
+* Theme toggle animation could be smoother on some browsers
+* On very slow internet connections, destination loading may take longer than expected
 
+## Technologies Used
+* React 19.1.0 - Frontend framework for building the user interface
+* Vite 7.0.4 - Build tool and development server for fast development
+* React Router DOM 7.7.0 - Client-side routing for navigation between sections
+* CSS-in-JS - Inline styling approach for component-specific styles
+* React Context API - State management for theme functionality
+* JSON Server - RESTful API for data persistence (hosted on Render)
+* Local Storage - Browser storage for theme preference persistence
+* ESLint - Code linting and formatting
+* Modern JavaScript (ES6+) features including hooks, async/await, and destructuring
 
-https://json-server-books-2.onrender.com
+## Support and contact details
+If you encounter any issues with the application or have suggestions for improvements, please feel free to reach out. You can contact me through GitHub or email for support, bug reports, or collaboration opportunities. Contributions to the codebase are welcome - please fork the repository and submit a pull request with your improvements.
+
+### License
+*This application is licensed under the MIT License, allowing for free use, modification, and distribution.*
+
+Copyright (c) 2025 **JOSHUA KARANJA**
