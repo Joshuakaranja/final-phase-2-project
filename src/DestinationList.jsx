@@ -125,7 +125,7 @@ function DestinationList() {
       <div style={{marginTop:"50px"}}>
       <Destination
       destination={selectedDestination}
-      onClose={()=>setSelectedDestination(null)}
+      onClose={()=>setSelectedDestinatn(null)}
       />
       </div>
      
