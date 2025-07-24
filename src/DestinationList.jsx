@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react'
+import Destination from './Destination'; 
 
 function DestinationList() {
   const [destinations, setDestinations]=useState([])
   const [editingId, setEditingId] =useState(null);
+  const [selectedDestination, setSelectedDestination]=useState(null);
   const [formData, setFormData]= useState({
     destination:"",
     description:"",
@@ -75,7 +77,11 @@ function DestinationList() {
 
   }
   return (
+<<<<<<< HEAD
 <div>
+=======
+    <div>
+>>>>>>> dbf1cedd6a30747d43d625f84badd7cad9d2259b
       <h2>Destination List</h2>
       
       {destinations.map((destination)=>{
@@ -112,8 +118,11 @@ function DestinationList() {
         )
       })}
     </div>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> dbf1cedd6a30747d43d625f84badd7cad9d2259b
   )
 }
 
