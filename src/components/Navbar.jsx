@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 function Navbar() {
   useEffect(() => {
@@ -21,40 +22,41 @@ function Navbar() {
     };
   }, []);
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
-  };
+  const location = useLocation();
 
   return (
     <nav className="navbar" style={styles.navbar}>
       <div className="navbar-container" style={styles.container}>
         <div style={styles.logo}>
-          <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} style={styles.logoLink}>
-            🌍 Travel Destinations
-          </a>
+          <Link to="/" style={styles.logoLink}>
+            Travel Destinations
+          </Link>
         </div>
         <div style={styles.navRight}>
           <ul style={styles.navLinks}>
             <li style={styles.navItem}>
-              <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} className="nav-link" style={styles.navLink}>
+              <Link to="/" className="nav-link" style={{
+                ...styles.navLink,
+                backgroundColor: location.pathname === '/' ? 'rgba(255,255,255,0.2)' : 'transparent'
+              }}>
                 Home
-              </a>
+              </Link>
             </li>
             <li style={styles.navItem}>
-              <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }} className="nav-link" style={styles.navLink}>
+              <Link to="/about" className="nav-link" style={{
+                ...styles.navLink,
+                backgroundColor: location.pathname === '/about' ? 'rgba(255,255,255,0.2)' : 'transparent'
+              }}>
                 About
-              </a>
+              </Link>
             </li>
             <li style={styles.navItem}>
-              <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }} className="nav-link" style={styles.navLink}>
+              <Link to="/contact" className="nav-link" style={{
+                ...styles.navLink,
+                backgroundColor: location.pathname === '/contact' ? 'rgba(255,255,255,0.2)' : 'transparent'
+              }}>
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

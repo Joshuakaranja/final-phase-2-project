@@ -12,6 +12,14 @@ function DestinationList() {
     budgetedAmount:"",
     image:""
   });
+  const [isAddingNew, setIsAddingNew] = useState(false);
+  const [newDestinationData, setNewDestinationData] = useState({
+    destination:"",
+    description:"",
+    date:"",
+    budgetedAmount:"",
+    image:""
+  });
   useEffect(()=>{
     fetch("https://json-server-books-2.onrender.com/destinations")
     .then(r=>r.json())

@@ -24,11 +24,14 @@ function Destination({ destination }) {
     headers:{
       "Content-Type":"application/json"
     },
-    body:JSON.stringify(formData)
+    body:JSON.stringify({
+      ...formData,
+      budgetedAmount: parseInt(formData.budgetAmount) || 0
+    })
   })
   .then(r=>r.json())
   .then(data=>{
-    console.log(data);
+    console.log("New destination added:", data);
     setFormData({
       destination: "",
       description: "",
@@ -36,7 +39,11 @@ function Destination({ destination }) {
       budgetAmount: "",
       image: ""
     });
-
+    // Refresh the page to show the new destination
+    window.location.reload();
+  })
+  .catch(error => {
+    console.error("Error adding destination:", error);
   })
   }
 

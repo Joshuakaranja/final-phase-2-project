@@ -14,19 +14,30 @@ Key functionality includes smooth navigation between sections (Home, About, Cont
 * Navigate to the project directory in your terminal
 * Run `npm install` to install all dependencies
 * Ensure you have Node.js version 16 or higher installed
+
+### Running the Application
+**Option 1: Using hosted JSON server (recommended)**
 * Run `npm run dev` to start the development server
 * Open your browser and navigate to `http://localhost:5173`
 * The application connects to a JSON server hosted at `https://json-server-books-2.onrender.com`
-* No additional database setup is required as the app uses the hosted JSON server
-* For development, ensure you have a stable internet connection to access the API
+
+**Option 2: Using local JSON server**
+* Open two terminal windows in the project directory
+* In the first terminal: Run `npm run server` to start the local JSON server on port 3001
+* In the second terminal: Run `npm run dev` to start the development server
+* Update the API URLs in the code to use `http://localhost:3001` instead of the hosted server
+* Open your browser and navigate to `http://localhost:5173`
+
+## Live Site
+🌐 **View the live application:** [https://traveljournala.netlify.app/](https://traveljournala.netlify.app/)
 
 ## Known Bugs
 Currently, there are no known critical bugs in the application. However, some areas for improvement include:
-* The app does not include functionality to add new destinations (only edit/delete existing ones)
 * Image URLs must be provided manually rather than through file upload
 * The application depends on an external JSON server, so functionality may be limited if the server is unavailable
 * Theme toggle animation could be smoother on some browsers
 * On very slow internet connections, destination loading may take longer than expected
+* After adding a new destination, the page refreshes to show the updated list
 
 ## Technologies Used
 * React 19.1.0 - Frontend framework for building the user interface
