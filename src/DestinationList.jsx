@@ -80,6 +80,9 @@ function DestinationList() {
     <>
     <div style={styles.container}>
       <h2 style={styles.title}>🗺️ Your Saved Destinations</h2>
+
+    <div>
+      <h2>Destination List</h2>
       
       <div style={styles.destinationsGrid}>
         {destinations.map((destination)=>{
