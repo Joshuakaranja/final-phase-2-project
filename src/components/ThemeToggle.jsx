@@ -20,8 +20,8 @@ const ThemeToggle = () => {
 
 const styles = {
   toggleButton: {
-    background: 'var(--toggle-bg)',
-    border: '2px solid var(--toggle-border)',
+    background: 'white',
+    border: '2px solid #e0e0e0',
     borderRadius: '50%',
     width: '50px',
     height: '50px',
@@ -30,14 +30,11 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     transition: 'all 0.3s ease',
-    boxShadow: '0 4px 12px var(--toggle-shadow)',
-    position: 'relative',
-    overflow: 'hidden',
+    boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
   },
   icon: {
     fontSize: '1.5rem',
     transition: 'transform 0.3s ease',
-    zIndex: 1,
   }
 };
 

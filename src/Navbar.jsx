@@ -28,7 +28,7 @@ function Navbar() {
   };
 
   return (
-    <nav style={styles.navbar}>
+    <nav className="navbar" style={styles.navbar}>
       <div style={styles.container}>
         <div style={styles.logo}>
           <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} style={styles.logoLink}>
@@ -64,9 +64,8 @@ function Navbar() {
 
 const styles = {
   navbar: {
-    backgroundColor: 'var(--nav-bg)',
     padding: '1rem',
-    boxShadow: '0 2px 4px var(--shadow-light)',
+    boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
     width: '94vw', 
     position: 'fixed',
     top: '8px',
@@ -87,7 +86,7 @@ const styles = {
     fontWeight: 'bold',
   },
   logoLink: {
-    color: 'var(--nav-text)',
+    color: '#40434E',
     textDecoration: 'none',
     transition: 'all 0.3s ease',
   },
@@ -108,7 +107,7 @@ const styles = {
   },
   navLink: {
     textDecoration: 'none',
-    color: 'var(--nav-link)',
+    color: '#ecf0f1',
     padding: '0.6rem 1.2rem',
     borderRadius: '5px',
     transition: 'all 0.3s ease',

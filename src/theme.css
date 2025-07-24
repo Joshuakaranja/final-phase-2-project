@@ -86,6 +86,84 @@ body {
   box-shadow: 0 6px 20px var(--toggle-shadow);
 }
 
+/* Footer Styling */
+.footer {
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+  border-radius: inherit;
+  z-index: 1;
+}
+
+.social-link:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.social-link:hover .icon-emoji {
+  transform: scale(1.2);
+}
+
+/* Specific social media hover effects */
+.social-link[href*="instagram"]:hover {
+  background: rgba(225, 48, 108, 0.15) !important;
+  border-color: rgba(225, 48, 108, 0.3) !important;
+}
+
+.social-link[href*="facebook"]:hover {
+  background: rgba(24, 119, 242, 0.15) !important;
+  border-color: rgba(24, 119, 242, 0.3) !important;
+}
+
+.social-link[href*="twitter"]:hover {
+  background: rgba(29, 161, 242, 0.15) !important;
+  border-color: rgba(29, 161, 242, 0.3) !important;
+}
+
+/* Responsive design for footer */
+@media (max-width: 768px) {
+  .footer {
+    margin: 20px 10px !important;
+    padding: 1.5rem 1rem !important;
+  }
+  
+  .footer .content-wrapper {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 1.5rem !important;
+  }
+  
+  .footer .social-section {
+    align-items: center !important;
+  }
+  
+  .footer .social-icons {
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer .social-icons {
+    flex-direction: column !important;
+    gap: 0.8rem !important;
+  }
+  
+  .footer .social-link {
+    width: 100% !important;
+    max-width: 200px !important;
+    justify-content: center !important;
+  }
+}
+
 /* Scrollbar theming */
 ::-webkit-scrollbar {
   width: 8px;
