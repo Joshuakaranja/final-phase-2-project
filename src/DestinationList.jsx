@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react'
+import Destination from './Destination'; 
 
 function DestinationList() {
   const [destinations, setDestinations]=useState([])
   const [editingId, setEditingId] =useState(null);
+  const [selectedDestination, setSelectedDestination]=useState(null);
   const [formData, setFormData]= useState({
     destination:"",
     description:"",
@@ -75,6 +77,8 @@ function DestinationList() {
 
   }
   return (
+    <div>
+      <h2>Destination List</h2>
     <div style={styles.container}>
       <h2 style={styles.title}>🗺️ Your Saved Destinations</h2>
       
@@ -115,8 +119,6 @@ function DestinationList() {
         })}
       </div>
     </div>
-
-
   )
 }
 
