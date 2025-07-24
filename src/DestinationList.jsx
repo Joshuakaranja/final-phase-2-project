@@ -77,8 +77,7 @@ function DestinationList() {
 
   }
   return (
-    <div>
-      <h2>Destination List</h2>
+    <>
     <div style={styles.container}>
       <h2 style={styles.title}>🗺️ Your Saved Destinations</h2>
       
@@ -110,6 +109,7 @@ function DestinationList() {
                     <div style={styles.buttonGroup}>
                       <button onClick={() => handleEdit(destination)} style={styles.editButton}>✏️ Edit</button>
                       <button onClick={()=>handleDelete(destination.id)} style={styles.deleteButton}>🗑️ Delete</button>
+                      <button onClick={()=>setSelectedDestination(destination)}>👁️ View</button>
                     </div>
                   </div>
                 </div>
@@ -119,6 +119,16 @@ function DestinationList() {
         })}
       </div>
     </div>
+    {selectedDestination &&(
+      <div style={{marginTop:"50px"}}>
+      <Destination
+      destination={selectedDestination}
+      onClose={()=>setSelectedDestination(null)}
+      />
+      </div>
+    )}
+    </>
+
   )
 }
 
@@ -132,7 +142,7 @@ const styles = {
     fontSize: '2.5rem',
     textAlign: 'center',
     marginBottom: '30px',
-    color: 'var(--text-primary)',
+    color: '#333',
     fontWeight: '600',
   },
   destinationsGrid: {
@@ -142,12 +152,15 @@ const styles = {
     padding: '20px 0',
   },
   destinationCard: {
-    backgroundColor: 'var(--card-bg)',
+    backgroundColor: 'white',
     borderRadius: '15px',
-    boxShadow: '0 8px 25px var(--card-shadow)',
+    boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
     overflow: 'hidden',
     transition: 'all 0.3s ease',
-    border: '1px solid var(--border-color)',
+    ':hover': {
+      transform: 'translateY(-5px)',
+      boxShadow: '0 15px 35px rgba(0,0,0,0.15)',
+    },
   },
   cardContent: {
     display: 'flex',
@@ -174,11 +187,11 @@ const styles = {
   destinationName: {
     fontSize: '1.5rem',
     fontWeight: '700',
-    color: 'var(--text-primary)',
+    color: '#2c3e50',
     margin: '0 0 10px 0',
   },
   description: {
-    color: 'var(--text-secondary)',
+    color: '#666',
     fontSize: '0.95rem',
     lineHeight: '1.5',
     margin: '0 0 15px 0',
@@ -191,7 +204,7 @@ const styles = {
   },
   date: {
     fontSize: '0.9rem',
-    color: 'var(--text-secondary)',
+    color: '#555',
     margin: 0,
   },
   budget: {
@@ -241,16 +254,17 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     gap: '15px',
-    backgroundColor: 'var(--card-bg)',
   },
   input: {
     padding: '12px',
-    border: '2px solid var(--border-color)',
+    border: '2px solid #e1e8ed',
     borderRadius: '8px',
     fontSize: '1rem',
-    backgroundColor: 'var(--bg-primary)',
-    color: 'var(--text-primary)',
     transition: 'border-color 0.3s ease',
+    ':focus': {
+      outline: 'none',
+      borderColor: '#3498db',
+    },
   },
   saveButton: {
     padding: '12px 20px',
