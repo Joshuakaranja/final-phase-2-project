@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import ThemeToggle from './components/ThemeToggle';
 
 function Navbar() {
   useEffect(() => {
@@ -34,23 +35,28 @@ function Navbar() {
             🌍 Travel Destinations
           </a>
         </div>
-        <ul style={styles.navLinks}>
-          <li style={styles.navItem}>
-            <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} className="nav-link" style={styles.navLink}>
-              Home
-            </a>
-          </li>
-          <li style={styles.navItem}>
-            <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }} className="nav-link" style={styles.navLink}>
-              About
-            </a>
-          </li>
-          <li style={styles.navItem}>
-            <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }} className="nav-link" style={styles.navLink}>
-              Contact
-            </a>
-          </li>
-        </ul>
+        <div style={styles.navRight}>
+          <ul style={styles.navLinks}>
+            <li style={styles.navItem}>
+              <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }} className="nav-link" style={styles.navLink}>
+                Home
+              </a>
+            </li>
+            <li style={styles.navItem}>
+              <a href="#about" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }} className="nav-link" style={styles.navLink}>
+                About
+              </a>
+            </li>
+            <li style={styles.navItem}>
+              <a href="#contact" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }} className="nav-link" style={styles.navLink}>
+                Contact
+              </a>
+            </li>
+          </ul>
+          <div className="theme-toggle">
+            <ThemeToggle />
+          </div>
+        </div>
       </div>
     </nav>
   );
@@ -58,18 +64,18 @@ function Navbar() {
 
 const styles = {
   navbar: {
-    backgroundColor: '#9D96D4',
-    padding: '1rem ',
-    boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+    backgroundColor: 'var(--nav-bg)',
+    padding: '1rem',
+    boxShadow: '0 2px 4px var(--shadow-light)',
     width: '94vw', 
-    position: 'fixed', // Makes navbar stick to top
+    position: 'fixed',
     top: '8px',
     left: '20px',
     zIndex: 1000,
-    borderRadius:'20px'
+    borderRadius: '20px'
   },
   container: {
-    width: '100%', // Ensures container takes full width
+    width: '100%',
     margin: 'auto',
     padding: 'auto',
     display: 'flex',
@@ -81,12 +87,14 @@ const styles = {
     fontWeight: 'bold',
   },
   logoLink: {
-    color: '#40434E',
+    color: 'var(--nav-text)',
     textDecoration: 'none',
     transition: 'all 0.3s ease',
-    '&:hover': {
-      opacity: 0.8,
-    }
+  },
+  navRight: {
+    display: 'flex',
+    alignItems: 'center',
+    gap: '2rem',
   },
   navLinks: {
     display: 'flex',
@@ -100,7 +108,7 @@ const styles = {
   },
   navLink: {
     textDecoration: 'none',
-    color: '#ecf0f1',
+    color: 'var(--nav-link)',
     padding: '0.6rem 1.2rem',
     borderRadius: '5px',
     transition: 'all 0.3s ease',

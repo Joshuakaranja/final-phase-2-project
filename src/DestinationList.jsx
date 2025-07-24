@@ -130,7 +130,7 @@ const styles = {
     fontSize: '2.5rem',
     textAlign: 'center',
     marginBottom: '30px',
-    color: '#333',
+    color: 'var(--text-primary)',
     fontWeight: '600',
   },
   destinationsGrid: {
@@ -140,15 +140,12 @@ const styles = {
     padding: '20px 0',
   },
   destinationCard: {
-    backgroundColor: 'white',
+    backgroundColor: 'var(--card-bg)',
     borderRadius: '15px',
-    boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
+    boxShadow: '0 8px 25px var(--card-shadow)',
     overflow: 'hidden',
     transition: 'all 0.3s ease',
-    ':hover': {
-      transform: 'translateY(-5px)',
-      boxShadow: '0 15px 35px rgba(0,0,0,0.15)',
-    },
+    border: '1px solid var(--border-color)',
   },
   cardContent: {
     display: 'flex',
@@ -175,11 +172,11 @@ const styles = {
   destinationName: {
     fontSize: '1.5rem',
     fontWeight: '700',
-    color: '#2c3e50',
+    color: 'var(--text-primary)',
     margin: '0 0 10px 0',
   },
   description: {
-    color: '#666',
+    color: 'var(--text-secondary)',
     fontSize: '0.95rem',
     lineHeight: '1.5',
     margin: '0 0 15px 0',
@@ -192,7 +189,7 @@ const styles = {
   },
   date: {
     fontSize: '0.9rem',
-    color: '#555',
+    color: 'var(--text-secondary)',
     margin: 0,
   },
   budget: {
@@ -242,17 +239,16 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     gap: '15px',
+    backgroundColor: 'var(--card-bg)',
   },
   input: {
     padding: '12px',
-    border: '2px solid #e1e8ed',
+    border: '2px solid var(--border-color)',
     borderRadius: '8px',
     fontSize: '1rem',
+    backgroundColor: 'var(--bg-primary)',
+    color: 'var(--text-primary)',
     transition: 'border-color 0.3s ease',
-    ':focus': {
-      outline: 'none',
-      borderColor: '#3498db',
-    },
   },
   saveButton: {
     padding: '12px 20px',

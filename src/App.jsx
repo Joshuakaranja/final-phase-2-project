@@ -48,10 +48,13 @@ function App() {
 const styles = {
   app: {
     fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+    backgroundColor: 'var(--bg-primary)',
+    color: 'var(--text-primary)',
+    minHeight: '100vh',
   },
   section: {
     minHeight: '100vh',
-    padding: '100px 20px 40px 20px', // Top padding for fixed navbar
+    padding: '100px 20px 40px 20px',
     transition: 'all 0.3s ease',
   },
   sectionContent: {
@@ -62,16 +65,16 @@ const styles = {
     textAlign: 'center',
     marginBottom: '40px',
     padding: '40px 20px',
-    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+    background: 'linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%)',
     borderRadius: '20px',
-    color: 'white',
-    boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
+    color: 'var(--text-on-gradient)',
+    boxShadow: '0 10px 30px var(--shadow-medium)',
   },
   welcomeTitle: {
     fontSize: '3rem',
     margin: '0 0 20px 0',
     fontWeight: '700',
-    textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
+    textShadow: '2px 2px 4px var(--shadow-heavy)',
   },
   welcomeSubtitle: {
     fontSize: '1.3rem',
@@ -80,20 +83,20 @@ const styles = {
     fontWeight: '300',
   },
   aboutSection: {
-    background: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+    background: 'linear-gradient(135deg, var(--section-about-start) 0%, var(--section-about-end) 100%)',
     minHeight: '80vh',
   },
   contactSection: {
-    background: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+    background: 'linear-gradient(135deg, var(--section-contact-start) 0%, var(--section-contact-end) 100%)',
     minHeight: '80vh',
   },
   sectionTitle: {
     fontSize: '2.5rem',
     textAlign: 'center',
     marginBottom: '40px',
-    color: 'white',
+    color: 'var(--text-on-gradient)',
     fontWeight: '600',
-    textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
+    textShadow: '2px 2px 4px var(--shadow-heavy)',
   },
   contactInfo: {
     textAlign: 'center',
@@ -101,9 +104,9 @@ const styles = {
   },
   contactText: {
     fontSize: '1.2rem',
-    color: 'white',
+    color: 'var(--text-on-gradient)',
     fontWeight: '300',
-    textShadow: '1px 1px 2px rgba(0,0,0,0.3)',
+    textShadow: '1px 1px 2px var(--shadow-heavy)',
   },
 };
 
