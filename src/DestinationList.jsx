@@ -82,6 +82,43 @@ function DestinationList() {
     <div style={styles.container}>
       <h2 style={styles.title}>🗺️ Your Saved Destinations</h2>
       
+      {destinations.map((destination)=>{
+        return (
+          <div key={destination.id}>
+            {editingId===destination.id?(
+              <form onSubmit={handleSubmit}>
+                <input type="text" name="destination" value={formData.destination} onChange={handleChange} /><br />
+                <input type="text" name="description" value={formData.description} onChange={handleChange} /><br />
+                <input type="text" name="date" value={formData.date} onChange={handleChange} /><br />
+                <input type="text" name="budgetedAmount" value={formData.budgetedAmount} onChange={handleChange} /><br />
+                <input type="text" name="image" value={formData.image} onChange={handleChange} /><br />
+                <button type="submit">Save Edits</button>
+
+              </form>
+            ):(
+              <>
+              <div className='destination-div'>
+              <h3><span style={{color:"yellowgreen"}}>Destination: </span>{destination.destination}</h3>
+              <p><span style={{color:"yellowgreen"}}>Description: </span>{destination.description}</p>
+              <p><span style={{color:"yellowgreen"}}>Date: </span>{destination.date}</p>
+              <p><span style={{color:"yellowgreen"}}>Budget Amount: </span>{destination.budgetedAmount}</p>
+              <img src={destination.image} alt={destination.destination} style={{ width: "300px" }} />
+              <br />
+              <button onClick={() => handleEdit(destination)}>Edit</button>
+              <button onClick={()=>handleDelete(destination.id)}>Delete</button>          
+              </div>
+              
+              </>
+            
+            )}
+
+          </div>
+        )
+      })}
+    </div>
+
+  )
+}
       <div style={styles.destinationsGrid}>
         {destinations.map((destination)=>{
           return (
