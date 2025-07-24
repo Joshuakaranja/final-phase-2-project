@@ -6,6 +6,7 @@ import Destination from './components/Destination'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
 import About from './pages/About'
+import Contact from './pages/Contact'
 import ThemeToggle from './components/ThemeToggle'
 
 function App() {
@@ -16,16 +17,15 @@ function App() {
       </div>
       <Navbar />
       <main className="content-container">
-        <section id="home">
+        <section id="home" style={{ marginBottom: '60px' }}>
           <DestinationList />
           <Destination />
         </section>
-        <section id="about">
-          <Description />
+        <section id="about" style={{ marginBottom: '100px', paddingTop: '40px' }}>
           <About />
         </section>
-        <section id="contact">
-          <Footer />
+        <section id="contact" style={{ marginTop: '100px', paddingTop: '60px' }}>
+          <Contact />
         </section>
       </main>
     </div>
