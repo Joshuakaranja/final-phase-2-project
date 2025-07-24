@@ -10,6 +10,7 @@ import Navbar from './Navbar'
 
 function App() {
   return(
+
   <div>
     <Description/>,
     <DestinationList/>,
@@ -18,6 +19,15 @@ function App() {
     <Navbar/>,
   </div>
   
+
+    <div>
+      <Navbar/>
+      <Description/>
+      <DestinationList/>
+      <Destination/>
+      <Footer/>
+    </div>
+
   )
 }
   
