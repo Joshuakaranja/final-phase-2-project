@@ -5,10 +5,25 @@
   width: 100%;
 }
 
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.theme-toggle-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+}
+
 .content-container {
   max-width: 90%;
   margin: 0 auto;
+  margin-top: 10px; /* Adjusted margin for navbar with border radius */
   padding: 2rem;
+  flex: 1;
 }
 
 .logo {

@@ -1,16 +1,12 @@
 import React from 'react'
-import Description from '../Description'
 import DestinationList from '../DestinationList'
-import Destination from '../Destination'
-
+import Description from '../Description'
 function Home() {
   return (
     <div>
-      <Description />
       <DestinationList />
-      <Destination />
+      <Description/>
     </div>
   )
 }
-
 export default Home

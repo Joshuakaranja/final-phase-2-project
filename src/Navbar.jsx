@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import ThemeToggle from './components/ThemeToggle';
 
 function Navbar() {
   useEffect(() => {
@@ -53,9 +52,6 @@ function Navbar() {
               </a>
             </li>
           </ul>
-          <div className="theme-toggle">
-            <ThemeToggle />
-          </div>
         </div>
       </div>
     </nav>
@@ -66,12 +62,13 @@ const styles = {
   navbar: {
     padding: '1rem',
     boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-    width: '94vw', 
-    position: 'fixed',
-    top: '8px',
-    left: '20px',
+    width: '100%',
+    position: 'sticky',
+    top: 0,
     zIndex: 1000,
-    borderRadius: '20px'
+    backgroundColor: '#9D96D4',
+    borderRadius: '5px',
+    margin: '5px'
   },
   container: {
     width: '100%',
@@ -86,9 +83,10 @@ const styles = {
     fontWeight: 'bold',
   },
   logoLink: {
-    color: '#40434E',
+    color: '#FFFFFF', /* White color for better visibility on purple background */
     textDecoration: 'none',
     transition: 'all 0.3s ease',
+    fontWeight: 'bold',
   },
   navRight: {
     display: 'flex',

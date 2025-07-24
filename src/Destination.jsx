@@ -180,9 +180,10 @@ const styles = {
   selectedDestination: {
     marginBottom: '40px',
     padding: '20px',
-    backgroundColor: 'rgba(255,255,255,0.95)',
+    backgroundColor: '#f5f5dc', /* Beige background for better visibility */
     borderRadius: '15px',
-    boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
+    boxShadow: '0 8px 25px rgba(0,0,0,0.15)',
+    border: '1px solid #e0e0e0',
   },
   selectedTitle: {
     fontSize: '1.8rem',
@@ -251,10 +252,11 @@ const styles = {
     transition: 'all 0.3s ease',
   },
   formSection: {
-    backgroundColor: 'rgba(255,255,255,0.95)',
+    backgroundColor: '#f8f8f8', /* Light grey for better visibility */
     padding: '30px',
     borderRadius: '15px',
-    boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
+    boxShadow: '0 8px 25px rgba(0,0,0,0.15)',
+    border: '1px solid #e0e0e0',
   },
   formTitle: {
     fontSize: '2rem',

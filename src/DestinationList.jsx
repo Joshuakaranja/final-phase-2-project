@@ -111,7 +111,7 @@ function DestinationList() {
                     <div style={styles.buttonGroup}>
                       <button onClick={() => handleEdit(destination)} style={styles.editButton}>✏️ Edit</button>
                       <button onClick={()=>handleDelete(destination.id)} style={styles.deleteButton}>🗑️ Delete</button>
-                      <button onClick={()=>setSelectedDestination(destination)}>👁️ View</button>
+                      <button onClick={()=>setSelectedDestination(destination)} style={styles.viewButton}>👁️ View</button>
                     </div>
                   </div>
                 </div>
@@ -125,7 +125,7 @@ function DestinationList() {
       <div style={{marginTop:"50px"}}>
       <Destination
       destination={selectedDestination}
-      onClose={()=>setSelectedDestinatn(null)}
+      onClose={()=>setSelectedDestination(null)}
       />
       </div>
      
@@ -156,14 +156,15 @@ const styles = {
     padding: '20px 0',
   },
   destinationCard: {
-    backgroundColor: 'white',
+    backgroundColor: '#f8f8f8', /* Light grey for better visibility */
     borderRadius: '15px',
-    boxShadow: '0 8px 25px rgba(0,0,0,0.1)',
+    boxShadow: '0 8px 25px rgba(0,0,0,0.15)',
+    border: '1px solid #e0e0e0',
     overflow: 'hidden',
     transition: 'all 0.3s ease',
     ':hover': {
       transform: 'translateY(-5px)',
-      boxShadow: '0 15px 35px rgba(0,0,0,0.15)',
+      boxShadow: '0 15px 35px rgba(0,0,0,0.2)',
     },
   },
   cardContent: {
@@ -250,6 +251,22 @@ const styles = {
     transition: 'all 0.3s ease',
     ':hover': {
       backgroundColor: '#c0392b',
+      transform: 'translateY(-2px)',
+    },
+  },
+  viewButton: {
+    flex: 1,
+    padding: '10px 15px',
+    backgroundColor: '#9b59b6',
+    color: 'white',
+    border: 'none',
+    borderRadius: '8px',
+    cursor: 'pointer',
+    fontSize: '0.9rem',
+    fontWeight: '500',
+    transition: 'all 0.3s ease',
+    ':hover': {
+      backgroundColor: '#8e44ad',
       transform: 'translateY(-2px)',
     },
   },
