@@ -164,7 +164,7 @@ const styles = {
     padding: '20px 0',
   },
   destinationCard: {
-    backgroundColor: '#f8f8f8', /* Light grey for better visibility */
+    backgroundColor: '#f8f8f8', 
     borderRadius: '15px',
     boxShadow: '0 8px 25px rgba(0,0,0,0.15)',
     border: '1px solid #e0e0e0',

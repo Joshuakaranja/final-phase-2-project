@@ -46,6 +46,7 @@ Currently, there are no known critical bugs in the application. However, some ar
 * CSS-in-JS - Inline styling approach for component-specific styles
 * React Context API - State management for theme functionality
 * JSON Server - RESTful API for data persistence (hosted on Render)
+* JSON Server Books Repo - [GitHub Repository](https://github.com/Joshuakaranja/json-server-books) for more details about the deployment
 * Local Storage - Browser storage for theme preference persistence
 * ESLint - Code linting and formatting
 * Modern JavaScript (ES6+) features including hooks, async/await, and destructuring

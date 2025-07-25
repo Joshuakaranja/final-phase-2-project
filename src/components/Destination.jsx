@@ -39,7 +39,6 @@ function Destination({ destination }) {
       budgetAmount: "",
       image: ""
     });
-    // Refresh the page to show the new destination
     window.location.reload();
   })
   .catch(error => {
